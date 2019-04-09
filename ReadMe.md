@@ -1,6 +1,6 @@
-#Solution to Josephus problem
+## Solution to Josephus problem
 
-##This is all that there is:
+### This is all that there is:
 ```
 var N = prompt("Enter # of people",""); //No. of people
 
@@ -32,14 +32,14 @@ alert("Remaining One: "+people);
 
 ```
 
-##Here is how it looks with all other decorative stuff - (see code for implementation)
+### Here is how it looks with all other decorative stuff - (see code for implementation)
 + Large black dot is survivor
 + White dots are people in the order they are cliked
 + Colorful dots are, well, when they were all alive & happy!
 
 ![Josephus Solution UI](JosepheusProblem_UI.PNG)
 
-## License
+### License
 
 This project is licensed as **As Is** without any Warranty. Refer to MIT or Apache's OS license for details whichever one you like.
 
@@ -54,7 +54,7 @@ This project is licensed as **As Is** without any Warranty. Refer to MIT or Apac
       codecodec
        sanjeevpan 
           deycodeco
-			codecodecode
+            codecodecode
 ```
 
 
