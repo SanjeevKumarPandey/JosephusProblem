@@ -4,7 +4,7 @@
 ```
 //No. of people
 var N = prompt("Enter # of people","");
-var k = 1; //order progression - leave one and kill next
+var k = 1; //order progression - everyone kills the next guy
 var m; // counter
 
 //push 'everyone' in an array
