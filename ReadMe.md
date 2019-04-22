@@ -47,7 +47,7 @@ alert("Remaining One: "+people);
 Look under ```jp-react-app```
 
 React-based UI:
-![Josephus Solution UI](JosephusSolution-ReactJS.PNG)
+![Josephus Solution UI](JosephusSolution-ReactJs.PNG)
 
 
 ### License
