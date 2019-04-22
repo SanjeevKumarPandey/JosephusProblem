@@ -1,4 +1,5 @@
 ## Solution to Josephus problem
++ _Now also available in react_
 
 ### This is all that there is:
 ```
@@ -41,6 +42,13 @@ alert("Remaining One: "+people);
 + Colorful dots are, well, when they were all alive & happy!
 
 ![Josephus Solution UI](JosepheusProblem_UI.PNG)
+
+### [NEW UPDATE] - Solution is now available in React as well!
+Look under ```jp-react-app```
+
+React-based UI:
+![Josephus Solution UI](JosephusSolution-ReactJS.PNG)
+
 
 ### License
 

@@ -1,4 +1,9 @@
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>josephusproblem</title>
 	<style type="text/css">
 		body {
     		font: 14px "Century Gothic", Futura, sans-serif;
@@ -10,138 +15,48 @@
   		}
 
   		#canvas {
-  			display: inline-block;
+  			/* display: inline; */
   			border: none; /*1px solid #d3d3d3;*/
   		}
+
+		p {
+			display: inline-block;
+		}
+
+		img {
+			width: 40px;
+			height: 50px;
+		}
+
 	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<h3>Shortest Solution to Josephus Problem</h3>
-	<canvas id="canvas" width="700" height="400px">
+	<input type="number" id="peoplenumber" placeholder="Enter # Of People" />
+	<input type="button" id="run" placeholder="RUN" value="RUN" onclick="main()"/>
+	<br><br>
+	<textarea cols="130" rows="5" name="comment" class='tb' id='textbox'></textarea>
+	<br>
+	<canvas id="canvas" width="500" height="400">
 		Your browser does not support the HTML5 canvas tag.
 	</canvas>
-	<textarea cols="30" rows="30" name="comment" class='tb' id='textbox'></textarea>
+	
 <script>
 	/*
 	* Sanjeev Pandey 04/09/2019 - Feel free to use the code and don't forget to acknowledge the author 
 	*/
-	var N = prompt("Enter Desired # Of People","");
-	var feedbackConsole = $("#textbox");
-	var feedbackText = "";
-	updateText("You Entered: "+N);
-	var people = [];
-	var k = 1;
-	var c = document.getElementById("canvas");
-	var w = 26;
-    var x = 20;
-    var y = 40;
-    var m;
-
-	function isArray(x) {
-		return x.constructor.toString().indexOf("Array") > -1;
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.onload = function(){
+		console.log(script.src);
+		let script_ = document.createElement('script');
+		script_.src = 'josephusproblem.js';
+		if(head) head.appendChild(script_);
 	}
-
-	console.log(isArray(people));
-
-	for(let i=1; i<=N; i++){
-		people.push(i);
-	}
-	paintUI();
-	//updateText("Original:"+people);
-	do {
-		for(let j=0;j<people.length;j++){
-			m = (j+k);
-			if(m>=people.length){
-				m=0;
-			}
-			updateText(people[j]+" killed "+people[m]);
-			deletedPeople(m);
-			people.splice(m, 1);
-		}
-	} while (people.length > 1);
-	updateText("Remaining One: "+people);
-	lastOneStanding(people[0]);
-
-	function paintUI(){
-		if (c.getContext) {
-        	var ctx = c.getContext("2d");
-      		for(let i=0;i<people.length;i++){
-       			x=x+30;
-       			if(x > c.width-40){
-       				x=50;
-       				y=y+40;
-       			}
-        		ctx.beginPath();
-        		if(people.length%i == 0){
-        			ctx.fillStyle = "rgb(200,0,0)";
-        		} else if(people.length%i == 1){
-        			ctx.fillStyle = "rgb(200,10,20)";
-        		} else if(people.length%i == 2){
-        			ctx.fillStyle = "rgb(100,30,100)";
-        		} else if(people.length%i == 3){
-        			ctx.fillStyle = "rgb(50,205,50)";
-        		} else {
-        			ctx.fillStyle = "rgb(30,20,200)";
-        		}
-        		ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
-        		ctx.fill();
-        		ctx = c.getContext("2d");
-        		ctx.font = '10pt Calibri';
-        		ctx.fillStyle = 'white';
-        		ctx.textAlign = 'center';
-        		ctx.fillText(people[i], x, y+3);
-    		}
-  		} else {
-  			console.log("UI Issue");
-  		}
-	}
-
-	function deletedPeople(killed){
-		if (c.getContext) {
-			x=x+30;
-       		if(x > c.width-40){
-       			x=50;
-       			y=y+40;
-       		}
-        	var ctx = c.getContext("2d");
-      		ctx.beginPath();
-      		ctx.fillStyle = "rgb(250,245,245)";
-        	ctx.arc(x, y, w/2, 0, 2 * Math.PI, false);
-        	ctx.fill();
-        	ctx = c.getContext("2d");
-        	ctx.font = '10pt Calibri';
-        	ctx.fillStyle = 'black';
-        	ctx.textAlign = 'center';
-        	ctx.fillText(people[killed], x, y+3);
-    	}
-	}
-
-	function lastOneStanding(winner) {
-		if (c.getContext) {
-			x=x+30;
-       		if(x > c.width-40){
-       			x=50;
-       			y=y+40;
-       		}
-        	var ctx = c.getContext("2d");
-      		ctx.beginPath();
-      		ctx.fillStyle = "rgb(0,0,0)";
-        	ctx.arc(x, y, w/1.5, 0, 2 * Math.PI, false);
-        	ctx.fill();
-        	ctx = c.getContext("2d");
-        	ctx.font = '10pt Calibri';
-        	ctx.fillStyle = 'white';
-        	ctx.textAlign = 'center';
-        	ctx.fillText(winner, x, y+3);
-    	}
-		
-	}
-
-	function updateText(feedback){
-		console.log(feedback);
-		feedbackText = "\n"+feedback;
-		feedbackConsole.val(feedbackConsole.val() + feedbackText);
-	}
+	script.src = 'libs/jquery.min.js.download';
+	head.appendChild(script);
 
 </script>
+</body>
+</html>
